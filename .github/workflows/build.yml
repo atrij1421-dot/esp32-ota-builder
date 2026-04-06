@@ -31,4 +31,5 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: firmware
-          path: esp32/build/*/*.bin
+          path: |
+  **/*.bin
