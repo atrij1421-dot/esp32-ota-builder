@@ -27,9 +27,13 @@ jobs:
         run: |
           arduino-cli compile --fqbn esp32:esp32:esp32 esp32
 
-      - name: Upload Firmware
+      - name: Show all files (debug)
+        run: |
+          echo "==== FILE LIST ===="
+          find . -type f
+
+      - name: Upload ALL files
         uses: actions/upload-artifact@v4
         with:
           name: firmware
-          path: |
-                **/*.bin
+          path: .
